@@ -31,8 +31,8 @@ public class RecoRangingListAdapter extends BaseAdapter{
         synchronized (beacons) {
             mRangedBeacons = new ArrayList<RECOBeacon>(beacons);
 
-            if(mRangedBeacons.size() == 3) {
-                for (int i = 0; i < 3; i++) {
+//            if(mRangedBeacons.size() == 3) {
+                for (int i = 0; i < mRangedBeacons.size(); i++) {
                     if (mRangedBeacons.get(i).getMinor() == 1115) {
                         beaconFront = mRangedBeacons.get(i).getRssi();
                     } else if (mRangedBeacons.get(i).getMinor() == 1109) {
@@ -41,7 +41,7 @@ public class RecoRangingListAdapter extends BaseAdapter{
                         beaconRight = mRangedBeacons.get(i).getRssi();
                     }
                 }
-            }
+//            }
 
             Log.e("Rssi", "Beacon Front : " + beaconFront + " Beacon Left : " + beaconLeft + " Beacon Right : " + beaconRight);
         }
